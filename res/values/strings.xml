@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, RecordsList!</string>
+    <string name="app_name">Cashzilla</string>
+<string name="menu_insert">Insert</string>
+<string name="menu_delete">Delete</string>
+</resources>
