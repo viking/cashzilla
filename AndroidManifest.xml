@@ -3,14 +3,54 @@
 	package="net.pillageandplunder.cashzilla" android:versionCode="1"
 	android:versionName="1.0">
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<provider android:name="CashzillaProvider"
-			android:authorities="net.pillageandpluner.provider.Cashzilla" />
-		<activity android:name=".RecordsList" android:label="@string/app_name">
+		<provider android:name="net.pillageandplunder.cashzilla.CashzillaProvider"
+			android:authorities="net.pillageandplunder.provider.Cashzilla" />
+
+		<activity android:name="RecordsList" android:label="@string/title_records_list">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<action android:name="android.intent.action.EDIT" />
+				<action android:name="android.intent.action.PICK" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="vnd.android.cursor.dir/vnd.pillageandplunder.record" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.GET_CONTENT" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="vnd.android.cursor.item/vnd.pillageandplunder.record" />
+			</intent-filter>
 		</activity>
+
+
+		<activity android:name="RecordEditor" android:label="@string/title_record">
+			<!--
+				This filter says that we can view or edit the data of a single
+				record
+			-->
+			<intent-filter android:label="@string/resolve_edit">
+				<action android:name="android.intent.action.VIEW" />
+				<action android:name="android.intent.action.EDIT" />
+				<action android:name="net.pillageandplunder.cashzilla.action.EDIT_RECORD" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="vnd.android.cursor.item/vnd.pillageandplunder.record" />
+			</intent-filter>
+
+			<!--
+				This filter says that we can create a new record inside of a
+				directory of records.
+			-->
+			<intent-filter>
+				<action android:name="android.intent.action.INSERT" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="vnd.android.cursor.dir/vnd.pillageandplunder.record" />
+			</intent-filter>
+
+		</activity>
+
 	</application>
 	<uses-sdk android:minSdkVersion="3" />
 </manifest> 

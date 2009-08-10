@@ -55,7 +55,7 @@ public final class Cashzilla {
          * The amount of the record
          * <P>Type: INTEGER</P>
          */
-        public static final String AMOUNT = "0";
+        public static final String AMOUNT = "amount";
 
         /**
          * The timestamp for when the record was created

@@ -7,6 +7,7 @@ import android.provider.BaseColumns;
  * Convenience definitions for CashzillaProvider
  */
 public final class Cashzilla {
+	
     /**
      * Records table
      */
@@ -15,7 +16,7 @@ public final class Cashzilla {
          * The content:// style URL for this table
          */
         public static final Uri CONTENT_URI
-                = Uri.parse("content://com.google.provider.Cashzilla/records");
+                = Uri.parse("content://net.pillageandplunder.provider.Cashzilla/records");
 
         /**
          * The default sort order for this table
@@ -38,7 +39,7 @@ public final class Cashzilla {
          * The amount of the record
          * <P>Type: INTEGER</P>
          */
-        public static final String AMOUNT = "0";
+        public static final String AMOUNT = "amount";
 
         /**
          * The timestamp for when the record was created
