@@ -3,8 +3,11 @@
 	android:layout_height="fill_parent">
 	<TextView android:id="@android:id/text1"
 		android:layout_height="fill_parent" android:textAppearance="@android:attr/textAppearanceLarge"
-		android:textColor="@android:color/white" android:layout_width="100sp"/>
+		android:textColor="@android:color/white" android:layout_width="100sp" />
 	<TextView android:id="@android:id/text2"
 		android:layout_height="fill_parent" android:textAppearance="@android:attr/textAppearanceLarge"
-		android:textColor="@android:color/white" android:layout_width="100sp"/>
+		android:textColor="@android:color/white" android:layout_width="100sp" />
+	<TextView android:id="@android:id/text3"
+		android:layout_height="fill_parent" android:textAppearance="@android:attr/textAppearanceLarge"
+		android:textColor="@android:color/white" android:layout_width="100sp" />
 </LinearLayout>

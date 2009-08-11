@@ -67,8 +67,11 @@ public class RecordsList extends ListActivity {
                 Records.DEFAULT_SORT_ORDER);
 
         // Used to map records entries from the database to views
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.recordslist_item, cursor,
-                new String[] { Records.DESCRIPTION, Records.AMOUNT }, new int[] { android.R.id.text1, android.R.id.text2 });
+		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
+				R.layout.recordslist_item, cursor,
+				new String[] { Records.DESCRIPTION, Records.CATEGORY,
+						Records.AMOUNT }, new int[] { android.R.id.text1,
+						android.R.id.text2, android.R.id.text3 });
         setListAdapter(adapter);
     }
 

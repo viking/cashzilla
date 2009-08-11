@@ -68,8 +68,13 @@ public class RecordEditor extends Activity {
                 	ContentValues data = new ContentValues();
                 	data.put(Records.DESCRIPTION, mDescription.getText().toString());
                 	data.put(Records.CATEGORY, mCategory.getText().toString());
+                	
+                	double amount = Math.floor(Double.parseDouble(mAmount.getText().toString()) * 100);
+                	data.put(Records.AMOUNT, (new Double(amount)).intValue());
+                	
                 	getContentResolver().insert(intent.getData(), data);
                 	setResult(RESULT_OK, (new Intent()).setAction(Cashzilla.Records.CONTENT_URI.toString()));
+                	finish();
                 	break;
                 case STATE_EDIT:
                 	break;
